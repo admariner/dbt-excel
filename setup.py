@@ -19,10 +19,10 @@ def _dbt_excel_version():
         match = re.search(_version_pattern, f.read().strip())
         if match is None:
             raise ValueError(f"invalid version at {_version_path}")
-        return match.group(1)
+        return match[1]
 
 
-package_version = _dbt_excel_version() + "rc2"
+package_version = f"{_dbt_excel_version()}rc2"
 description = """The excel adapter plugin for dbt (data build tool)"""
 
 setup(
