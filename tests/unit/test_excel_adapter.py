@@ -8,7 +8,6 @@ from tests.unit.utils import config_from_parts_or_dicts, mock_connection
 
 class TestExcelAdapter(unittest.TestCase):
     def setUp(self):
-        pass
         flags.STRICT_MODE = True
 
         profile_cfg = {

@@ -48,7 +48,4 @@ class ExcelRelation(BaseRelation):
         return super().create_from_source(source, **kwargs)  # type: ignore
 
     def render(self) -> str:
-        if self.external_location:
-            return self.external_location
-        else:
-            return super().render()
+        return self.external_location if self.external_location else super().render()
